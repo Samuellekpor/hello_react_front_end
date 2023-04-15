@@ -6,7 +6,12 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={Greeting} />
+        <Route path="/" exact>
+          <h1>Message: </h1>
+        </Route>
+        <Route path="/greeting">
+          <Greeting />
+        </Route>
       </Switch>
     </Router>
   );

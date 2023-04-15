@@ -1,20 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchGreeting } from '../actions/greetingActions';
 
-function Greeting(props) {
-  const { greeting, fetchGreeting } = props;
-  const [loading, setLoading] = useState(true);
-
+function Greeting({ greeting, fetchGreeting }) {
   useEffect(() => {
-    fetchGreeting().finally(() => setLoading(false));
-  }, [fetchGreeting]);
+    fetchGreeting();
+  }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  return <h1>{greeting.message}</h1>;
+  return (
+    <div>
+      <h1>Random Greeting</h1>
+      {greeting && <h2>{greeting.message}</h2>}
+    </div>
+  );
 }
 
 const mapStateToProps = state => {
@@ -25,8 +23,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-  fetchGreeting: () => dispatch(fetchGreeting()),
+    fetchGreeting: () => dispatch(fetchGreeting()),
   };
 };
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
