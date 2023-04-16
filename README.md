@@ -62,7 +62,7 @@ In order to run this project you need:
 - Node.js installed in your computer. ([install guide](https://nodejs.org/en))
 - Code editor preferably [Vscode](https://code.visualstudio.com/).
 - npmjs installed to use ```npm```
-- Complete instructions to configure Back end  [Rails Back-End README file](https://github.com/Samuellekpor/hello-rails-back-end/README.md)
+- Complete instructions to configure Back end  [hello-rails-back-end README file](https://github.com/Samuellekpor/hello-rails-back-end/blob/development/README.md)
 
 ### Setup
 
@@ -79,7 +79,7 @@ Install this project with:
 Example command:
 
 ```sh
-  cd ello_react_front_end
+  cd hello_react_front_end
   npm install
 ```
 
@@ -112,7 +112,7 @@ To start the server use the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Krishnabot/Hello-rails-Frontend/issues).
+Feel free to check the [issues page](https://github.com/Samuellekpor/hello_react_front_end/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
