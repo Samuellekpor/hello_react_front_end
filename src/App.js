@@ -1,6 +1,7 @@
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getGreeting } from './actions/greetingActions';
+import getGreeting from './actions/greetingActions';
 import Greeting from './components/Greeting';
 
 function App() {
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <Router>
-      <Route exact path="/" component={Greeting} />
+      <Routes>
+        <Route path="/" element={<Greeting />} />
+      </Routes>
     </Router>
   );
 }
