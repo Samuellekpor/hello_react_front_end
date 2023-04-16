@@ -1,16 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { getGreeting } from './actions/greetingActions';
 import Greeting from './components/Greeting';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getGreeting());
+  }, [dispatch]);
+
   return (
-    <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Greeting />} />
-        </Routes>
-      </Router>
-    </Provider>
+    <Router>
+      <Route exact path="/" component={Greeting} />
+    </Router>
   );
 }
 
